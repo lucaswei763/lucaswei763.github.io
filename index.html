@@ -1,380 +1,155 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 8.1.2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="lucaswei 的个人主页 - 专注于探索 Web 前沿技术，热爱开源与纯粹的代码。">
+    <title>lucaswei | Home</title>
+    
+    <!-- Load TailwindCSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
 
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"lucaswei763.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="lucaswei&#39;s Blog">
-<meta property="og:url" content="https://lucaswei763.github.io/index.html">
-<meta property="og:site_name" content="lucaswei&#39;s Blog">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="lucaswei">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://lucaswei763.github.io/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : true,
-    isPost : false,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>lucaswei's Blog</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <script>
+        // Inline script to avoid theme flashing
+        const getTheme = () => {
+            const theme = localStorage.getItem("theme");
+            if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                return "dark";
+            }
+            return "light";
+        };
+        const applyTheme = (doc) => {
+            const theme = getTheme();
+            if (theme === "dark") {
+                doc.documentElement.classList.add("dark");
+            } else {
+                doc.documentElement.classList.remove("dark");
+            }
+        };
+        applyTheme(document);
+    </script>
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">lucaswei's Blog</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content index posts-expand">
-            
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lucaswei763.github.io/2026/07/10/firstBlog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="lucaswei">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lucaswei's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/07/10/firstBlog/" class="post-title-link" itemprop="url">firstBolg</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2026-07-10 17:37:51 / 修改时间：17:53:01" itemprop="dateCreated datePublished" datetime="2026-07-10T17:37:51+08:00">2026-07-10</time>
-            </span>
-
-          
-
+<body class="bg-white dark:bg-[#121212] text-neutral-900 dark:text-neutral-50 antialiased flex flex-col items-center min-h-screen transition-colors duration-300">
+    <main class="w-full px-6 py-16 flex-1 flex flex-col max-w-[680px]">
+        <div class="max-w-2xl mx-auto px-6 py-16 flex flex-col items-center min-h-[60vh] justify-center">
+            <header class="flex flex-col items-center text-center">
+                <img src="/images/avatar.webp" alt="lucaswei Avatar" loading="eager" width="192" height="192" class="w-24 h-24 rounded-full mb-6 object-cover shadow-sm ring-4 ring-neutral-50 dark:ring-neutral-900">
+                <h1 class="text-3xl font-light text-neutral-800 dark:text-neutral-200 tracking-tight">
+                    Hi there, I'm 
+                    <span class="font-bold text-black dark:text-white">lucaswei</span>
+                </h1>
+                <p class="mt-3 text-neutral-500 dark:text-neutral-400 text-base font-light">专注于探索 Web 前沿技术，热爱开源与纯粹的代码。</p>
+            </header>
+            <nav class="mt-8 mb-12 flex w-full max-w-md flex-wrap items-center justify-center gap-y-4 sm:gap-x-10">
+                <a href="/blog/" class="group relative text-center text-base font-medium text-neutral-500 transition-colors hover:text-black dark:hover:text-white basis-1/3 sm:basis-auto">
+                     博客 
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all group-hover:w-full"></span>
+                </a>
+                <a href="https://github.com/lucaswei763" target="_blank" class="group relative text-center text-base font-medium text-neutral-500 transition-colors hover:text-black dark:hover:text-white basis-1/3 sm:basis-auto">
+                     GitHub 
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all group-hover:w-full"></span>
+                </a>
+                <a href="https://github.com/lucaswei763?tab=repositories" target="_blank" class="group relative text-center text-base font-medium text-neutral-500 transition-colors hover:text-black dark:hover:text-white basis-1/3 sm:basis-auto">
+                     开源项目 
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all group-hover:w-full"></span>
+                </a>
+                <a href="mailto:yihangwei.work@gmail.com" class="group relative text-center text-base font-medium text-neutral-500 transition-colors hover:text-black dark:hover:text-white basis-1/3 sm:basis-auto">
+                     联系我 
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all group-hover:w-full"></span>
+                </a>
+            </nav>
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p align="center" class="avatar-wrapper">
-  <img src="/2026/07/10/firstBlog/avatar.webp" class="" title="这是图片描述">
-</p>
-
-<style>
-.avatar-wrapper img {
-  width: 120px;
-  border-radius: 50%;
-}
-</style>
-
-<h1 align="center">lucaswei</h1>
-
-<p align="center">专注于探索 Web 前沿技术，热爱开源与纯粹的代码。</p>
-
-<p align="center">
-  <a href="https://github.com/lucaswei763" target="_blank">GitHub</a> &nbsp;&nbsp;•&nbsp;&nbsp;
-  <a href="https://github.com/lucaswei763?tab=repositories" target="_blank">开源项目</a> &nbsp;&nbsp;•&nbsp;&nbsp;
-  <a href="mailto:yihangwei.work@gmail.com">联系我</a>
-</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">lucaswei</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">1</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-  </nav>
-</div>
-  <div class="cc-license motion-element" itemprop="license">
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-  </div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
     </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2026</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">lucaswei</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
-  </div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
+    <footer class="w-full max-w-[680px] px-6 pb-16 text-sm text-neutral-500 dark:text-neutral-400 text-center">
+        <p class="mb-4">
+            Copyright &copy; 2026
+            <a href="/" class="hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors">lucaswei</a>
+        </p>
+        <div class="flex justify-center items-center mt-6">
+            <div class="inline-flex bg-neutral-100 dark:bg-neutral-900 p-1 rounded-full border border-neutral-200 dark:border-neutral-800">
+                <button data-theme-btn="light" title="Light Mode" class="p-1.5 rounded-full transition-all hover:text-neutral-900 dark:hover:text-neutral-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide lucide-sun w-4 h-4">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2"></path>
+                        <path d="M12 20v2"></path>
+                        <path d="m4.93 4.93 1.41 1.41"></path>
+                        <path d="m17.66 17.66 1.41 1.41"></path>
+                        <path d="M2 12h2"></path>
+                        <path d="M20 12h2"></path>
+                        <path d="m6.34 17.66-1.41 1.41"></path>
+                        <path d="m19.07 4.93-1.41 1.41"></path>
+                    </svg>
+                </button>
+                <button data-theme-btn="system" title="System Preference" class="p-1.5 rounded-full transition-all hover:text-neutral-900 dark:hover:text-neutral-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide lucide-monitor w-4 h-4">
+                        <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+                        <line x1="8" x2="16" y1="21" y2="21"></line>
+                        <line x1="12" x2="12" y1="17" y2="21"></line>
+                    </svg>
+                </button>
+                <button data-theme-btn="dark" title="Dark Mode" class="p-1.5 rounded-full transition-all hover:text-neutral-900 dark:hover:text-neutral-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="lucide lucide-moon w-4 h-4">
+                        <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </footer>
-  </div>
 
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+    <script>
+        const updateActiveButton = () => {
+            const currentTheme = localStorage.getItem("theme") || "system";
+            document.querySelectorAll("[data-theme-btn]").forEach(t => {
+                if (t.getAttribute("data-theme-btn") === currentTheme) {
+                    t.classList.add("bg-white", "dark:bg-neutral-800", "shadow-sm", "text-neutral-900", "dark:text-neutral-100");
+                } else {
+                    t.classList.remove("bg-white", "dark:bg-neutral-800", "shadow-sm", "text-neutral-900", "dark:text-neutral-100");
+                }
+            });
+        };
 
-<script src="/js/utils.js"></script>
+        const setupThemeToggle = () => {
+            document.querySelectorAll("[data-theme-btn]").forEach(s => {
+                s.addEventListener("click", () => {
+                    const theme = s.getAttribute("data-theme-btn");
+                    if (theme === "system") {
+                        localStorage.removeItem("theme");
+                        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                            document.documentElement.classList.add("dark");
+                        } else {
+                            document.documentElement.classList.remove("dark");
+                        }
+                    } else {
+                        localStorage.setItem("theme", theme);
+                        if (theme === "dark") {
+                            document.documentElement.classList.add("dark");
+                        } else {
+                            document.documentElement.classList.remove("dark");
+                        }
+                    }
+                    updateActiveButton();
+                });
+            });
+            updateActiveButton();
+        };
 
-<script src="/js/motion.js"></script>
+        setupThemeToggle();
 
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
+            if (!localStorage.getItem("theme")) {
+                if (e.matches) {
+                    document.documentElement.classList.add("dark");
+                } else {
+                    document.documentElement.classList.remove("dark");
+                }
+                updateActiveButton();
+            }
+        });
+    </script>
 </body>
 </html>
